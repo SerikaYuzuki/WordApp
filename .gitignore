@@ -60,3 +60,12 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Xcode Patch
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+
+.DS_Store
+WordApp.xcodeproj/project.xcworkspace/xcuserdata/matsumoto.xcuserdatad/UserInterfaceState.xcuserstate
