@@ -4,33 +4,33 @@ import SwiftUI
 let showWhenNoWordsLoaded = false
 
 
-enum TestMode: Identifiable {
+enum QuizMode: Identifiable {
     case mode1
     case mode2
 
     var id: Self { self } // Identifiable に適合させる
 }
 
-/// `TestView` はテストモードを選択する画面ですよ～☕️
+/// `QuizView` はテストモードを選択する画面ですよ～☕️
 /// - ユーザーが「選択肢モード」か「入力モード」を選べるんです📖✨
-struct TestView: View {
+struct QuizView: View {
     
     let words: [Word]
 
     /// 選択されたテストモードですね～☕️
-    @State private var selectedMode: TestMode? = nil
+    @State private var selectedMode: QuizMode? = nil
 
     var body: some View {
         VStack(spacing: 20) {
             
             /// タイトルですよ～📖✨
-            Text("Select Test Mode")
+            Text("Select Quiz Mode")
                 .font(.largeTitle)
                 .bold()
                 .padding()
 
             /// 選択肢モードへのナビゲーションボタンです☕️
-            Button("🔘 Multiple Choice Test") {
+            Button("🔘 Multiple Choice Quiz") {
                 selectedMode = .mode1
             }
             .padding()
@@ -39,7 +39,7 @@ struct TestView: View {
             .cornerRadius(10)
 
             /// 入力モードへのナビゲーションボタンですよ📖✨
-            Button("⌨️ Text Input Test") {
+            Button("⌨️ Text Input Quiz") {
                 selectedMode = .mode2
             }
             .padding()
@@ -52,9 +52,9 @@ struct TestView: View {
         .padding()
         .sheet(item: $selectedMode) { mode in
             if mode == .mode1 {
-                MultipleChoiceTestView(words: words)
+                MultipleChoiceQuizView(words: words)
             } else {
-                TextInputTestView(words: words)
+                TextInputQuizView(words: words)
             }
         }
     }
@@ -62,9 +62,9 @@ struct TestView: View {
 
 #Preview {
     if showWhenNoWordsLoaded {
-        TestView(words: [])
+        QuizView(words: [])
     } else {
-        TestView(words: [
+        QuizView(words: [
             Word(word: "go", meanings: [Meaning(definition: "行く", examples: ["I go to school every day."])]),
             Word(word: "run", meanings: [Meaning(definition: "走る", examples: ["He runs every morning."])])
         ])
