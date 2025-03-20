@@ -23,8 +23,8 @@ struct ContentView: View {
   /// - 単語リストを見たり、追加・削除したりできます☕️
   /// - そして、単語テストを開始するボタンもあります☕️
   var body: some View {
-    /// ナビゲーションビューを使って全体のレイアウトを管理するんです☕️
-    NavigationView {
+    /// NavigationStackを使って全体のレイアウトを管理するんです☕️
+    NavigationStack {
       ZStack(alignment: .bottomTrailing) {
         /// ここでは登録された単語をリスト表示しちゃいます☕️
         List {
@@ -60,9 +60,7 @@ struct ContentView: View {
 
         /// 画面右下にある「Quiz」ボタンですね☕️
         /// - タップすると、テストモード選択のアクションシートが出てきます☕️
-        Button {
-          showingQuizView = true
-        } label: {
+        NavigationLink(destination: QuizView(words: words)) {
           Text("Quiz")
             .padding()
             .background(Color.blue)
@@ -104,7 +102,7 @@ struct ContentView: View {
 #Preview {
   /// デバッグ用のフラグですね☕️
   /// - これを `true` にすると、プレビュー時に保存された単語を削除しちゃいます☕️
-  let debugClearPreviewData = false
+  let debugClearPreviewData = true
 
   if debugClearPreviewData {
     UserDefaults.standard.removeObject(forKey: "SavedWords")

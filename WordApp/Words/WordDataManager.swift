@@ -78,4 +78,31 @@ struct WordDataManager {
       return defaultWords
     }
   }
+  
+  /// 例文の単語をアンダーラインに変える関数ですよ～☕️
+  public func underlineExample(word: Word) -> [String] {
+    var underlinedExamples: [String] = []
+    let inflections = InflectionData.generateInflections(for: word.word)
+
+    for meaning in word.meanings {
+      for example in meaning.examples {
+        var underlinedExample = example
+        for inflection in inflections {
+          let pattern =
+            "\\b" + NSRegularExpression.escapedPattern(for: inflection) + "\\b"
+          let regex = try! NSRegularExpression(pattern: pattern, options: [])
+
+          underlinedExample = regex.stringByReplacingMatches(
+            in: underlinedExample,
+            options: [],
+            range: NSRange(location: 0, length: underlinedExample.utf16.count),
+            withTemplate: "____"
+          )
+        }
+        underlinedExamples.append(underlinedExample)
+      }
+    }
+
+    return underlinedExamples
+  }
 }

@@ -62,15 +62,23 @@ struct InflectionData {
   /// - Parameter word: 活用を作りたい単語を入れます☕️
   /// - Returns: 活用形のリストですよ☕️
   static func generateInflections(for word: String) -> [String] {
-    var inflections: [String]
+    /// 単語が空だったら、空のリストを返します☕️
+    if word.isEmpty {
+      return []
+    }
+    
+    var inflections: [String] = []
+    
+    /// 原型をまず追加します☕️
+    inflections.append(word.lowercased())
 
     /// もし不規則動詞の活用があれば、それを使うんです☕️
     /// コードがちょっとめんどくさいですが、irrefularVerbsには不規則動詞が全部入ってるので、それの中にword.lowercased()が入ってるか確認しています☕️
     /// そうじゃない時は、デフォルトの活用形を使うんです☕️
     if let irregular = irregularVerbs[word.lowercased()] {
-      inflections = irregular
+      inflections.append(contentsOf: irregular)
     } else {
-      inflections = defaultInflections(for: word)
+      inflections.append(contentsOf: defaultInflections(for: word))
     }
 
     /// 三人称単数形を追加します☕️

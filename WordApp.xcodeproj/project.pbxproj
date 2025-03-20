@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		052596512D8C618F002BAAE1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 052596502D8C6187002BAAE1 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		05DA6F842D8841D10072FD5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052596502D8C6187002BAAE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		05DA6F712D8841D00072FD5C /* WordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DA6F832D8841D10072FD5C /* WordAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DA6F8D2D8841D10072FD5C /* WordAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		05DA6F682D8841D00072FD5C = {
 			isa = PBXGroup;
 			children = (
+				052596502D8C6187002BAAE1 /* README.md */,
 				05DA6F732D8841D00072FD5C /* WordApp */,
 				05DA6F862D8841D10072FD5C /* WordAppTests */,
 				05DA6F902D8841D10072FD5C /* WordAppUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052596512D8C618F002BAAE1 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
