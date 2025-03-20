@@ -22,7 +22,6 @@ https://github.com/user-attachments/assets/3ccafc0b-543a-49ff-8ba9-4ff077af3248
 アプリ開発初心者なので、コードが汚いかもしれません。また、かなり更新が遅いと思います。
  
 # License
-ライセンスを明示する
  
 WordApp is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
 
