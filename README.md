@@ -6,8 +6,8 @@
  
 # DEMO
  
+https://github.com/user-attachments/assets/3ccafc0b-543a-49ff-8ba9-4ff077af3248
 
- 
 # Features
  
 - 単語の自動意味検索
