@@ -1,0 +1,70 @@
+[
+    {
+        "word": "go",
+        "meanings": [
+            {
+                "definition": "行く",
+                "examples": [
+                    "I go to school every day.",
+                    "He goes to work early.",
+                    "She went to the store.",
+                    "They have gone home."
+                ]
+            }
+        ]
+    },
+    {
+        "word": "run",
+        "meanings": [
+            {
+                "definition": "走る",
+                "examples": [
+                    "He runs every morning.",
+                    "She ran a marathon.",
+                    "They have run for hours."
+                ]
+            }
+        ]
+    },
+    {
+        "word": "write",
+        "meanings": [
+            {
+                "definition": "書く",
+                "examples": [
+                    "I write letters.",
+                    "She writes beautifully.",
+                    "He wrote a novel.",
+                    "They have written many books."
+                ]
+            }
+        ]
+    },
+    {
+        "word": "eat",
+        "meanings": [
+            {
+                "definition": "食べる",
+                "examples": [
+                    "I eat breakfast at 7 AM.",
+                    "She eats an apple daily.",
+                    "He ate sushi yesterday.",
+                    "They have eaten already."
+                ]
+            }
+        ]
+    },
+    {
+        "word": "swim",
+        "meanings": [
+            {
+                "definition": "泳ぐ",
+                "examples": [
+                    "He swims every weekend.",
+                    "She swam across the lake.",
+                    "They have swum in the ocean."
+                ]
+            }
+        ]
+    }
+]
