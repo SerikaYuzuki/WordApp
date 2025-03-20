@@ -112,9 +112,6 @@ struct ContentView: View {
 
 /// `ContentView` のプレビューです☕️
 #Preview {
-
-    
-
     /// デバッグ用のフラグですね☕️
     /// - これを `true` にすると、プレビュー時に保存された単語を削除しちゃいます☕️
     let debugClearPreviewData = false

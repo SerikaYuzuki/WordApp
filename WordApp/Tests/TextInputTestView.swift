@@ -1,9 +1,9 @@
 //
 //  TextInputTestView.swift
 //  WordApp
-//  
+//
 //  Created by 柚木芹香☕️ on 2025/03/20
-//  
+//
 //
 
 import SwiftUI
@@ -35,6 +35,10 @@ struct TextInputTestView: View {
                 Text("Enter the word for the meaning:")
                 Text(currentWord.meanings.first?.definition ?? "")
                     .font(.headline)
+                
+                Text(currentWord.meanings.first?.examples.first ?? "")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
 
                 TextField("Your answer", text: $userAnswer)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -43,19 +47,71 @@ struct TextInputTestView: View {
                 Button("Submit") {
                     isCorrect = (userAnswer.lowercased() == currentWord.word.lowercased())
                     if isCorrect == true { correctCount += 1 }
+                    nextQuestion()
                 }
                 .disabled(userAnswer.isEmpty || isCorrect != nil)
             }
         }
         .padding()
+        .onAppear {
+            startTest()
+        }
     }
+
+    /// テストを開始するための関数
+    private func startTest() {
+        questions = words.shuffled()
+        currentIndex = 0
+        correctCount = 0
+        isCorrect = nil
+    }
+
+    /// 次の問題へ進む関数
+    private func nextQuestion() {
+        isCorrect = nil
+        if currentIndex + 1 < questions.count {
+            currentIndex += 1
+        }
+    }
+    
+    /// 編集中
+//
+//    /// 例文の単語をアンダーラインに変える関数です☕️
+//    private func underlineExample(word: Word) -> String {
+//        var underlinedExample: [String] = []
+//        let inflections = InflectionData.generateInflections(for: word.word)
+//        
+//        for meaning in word.meanings {
+//            for example in meaning.examples {
+//                
+//            }
+//        }
+//                
+//        
+//        return ""
+//    }
+//    
+//    private func underlineForOneMeaning(for meaning :String, of word: Word) -> String {
+//        var underlinedExample: String = word.meanings
+//        let inflections = InflectionData.generateInflections(for: word.word)
+//
+//        for inflection in inflections {
+//            let pattern = "\\b" + NSRegularExpression.escapedPattern(for: inflection) + "\\b"
+//            let regex = try! NSRegularExpression(pattern: pattern, options: [])
+//            
+//            underlinedExample = regex.stringByReplacingMatches(
+//                in: meaning,
+//                options: [],
+//                range: NSRange(location: 0, length: meaning.count),
+//                withTemplate: "____") ??
+//        }
+//        
+//        return ""
+//    }
+        
+        
 }
 
 #Preview {
-    TextInputTestView(words: [
-        Word(word: "go", meanings: [Meaning(definition: "行く", examples: ["I go to school every day."])]),
-        Word(word: "run", meanings: [Meaning(definition: "走る", examples: ["He runs every morning."])])
-    ]
-    )
+    TextInputTestView(words: WordDataManager.loadWords())
 }
-
