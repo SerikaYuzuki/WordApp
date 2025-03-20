@@ -1,5 +1,5 @@
 //
-//  MultipleChoiceTestView.swift
+//  MultipleChoiceQuizView.swift
 //  WordApp
 //  
 //  Created by 柚木芹香☕️ on 2025/03/20
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-/// `MultipleChoiceTestView` は選択肢形式のテストですよ～☕️
-struct MultipleChoiceTestView: View {
+/// `MultipleChoiceQuizView` は選択肢形式のテストですよ～☕️
+struct MultipleChoiceQuizView: View {
     
     let words: [Word]
     
@@ -35,7 +35,7 @@ struct MultipleChoiceTestView: View {
             if currentIndex >= questions.count {
                 
                 /// テストが終わったときのメッセージですよ📖
-                Text("Test Finished!")
+                Text("Quiz Finished!")
                     .font(.largeTitle)
                     .padding()
                 
@@ -90,11 +90,11 @@ struct MultipleChoiceTestView: View {
         }
         .padding()
         .onAppear {
-            startTest()
+            startQuiz()
         }
     }
 
-    private func startTest() {
+    private func startQuiz() {
         questions = words.shuffled()
         currentIndex = 0
         correctCount = 0

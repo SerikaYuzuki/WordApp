@@ -21,7 +21,7 @@ struct ContentView: View {
     
 
     /// 単語テスト画面を表示するかどうかのフラグですね☕️
-    @State private var showingTestView = false
+    @State private var showingQuizView = false
 
 
 
@@ -64,12 +64,12 @@ struct ContentView: View {
                     }
                 }
                 
-                /// 画面右下にある「Test」ボタンですね☕️
+                /// 画面右下にある「Quiz」ボタンですね☕️
                 /// - タップすると、テストモード選択のアクションシートが出てきます☕️
                 Button {
-                    showingTestView = true
+                    showingQuizView = true
                 } label: {
-                    Text("Test")
+                    Text("Quiz")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -92,8 +92,8 @@ struct ContentView: View {
             }
             
             /// テスト画面をモーダル表示します☕️
-            .sheet(isPresented: $showingTestView) {
-                TestView(words: words)
+            .sheet(isPresented: $showingQuizView) {
+                QuizView(words: words)
             }
         }
     }
