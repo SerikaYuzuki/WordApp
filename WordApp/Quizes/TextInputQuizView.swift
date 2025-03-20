@@ -113,13 +113,5 @@ struct TextInputQuizView: View {
 }
 
 #Preview {
-<<<<<<< HEAD:WordApp/Tests/TextInputTestView.swift
-    TextInputTestView(words: WordDataManager.loadWords())
-=======
-    TextInputQuizView(words: [
-        Word(word: "go", meanings: [Meaning(definition: "行く", examples: ["I go to school every day."])]),
-        Word(word: "run", meanings: [Meaning(definition: "走る", examples: ["He runs every morning."])])
-    ]
-    )
->>>>>>> 785eb8022247629ca5f89da6f9d523d8b55f2730:WordApp/Quizes/TextInputQuizView.swift
+    TextInputQuizView(words: WordDataManager.loadWords())
 }
